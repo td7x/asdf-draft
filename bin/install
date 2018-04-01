@@ -28,8 +28,11 @@ install() {
   mkdir -p "${bin_install_path}"
 
   echo "Downloading draft from ${download_url}"
-  curl -sL "$download_url" -o "$bin_path"
+  temp_dir=$(mktemp -d /tmp/asdf-draft.XXXXXX);
+  curl -sL "$download_url" | tar xz -C "$temp_dir"
+  mv "${temp_dir}/${platform}-${arch}/draft" "$bin_path"
   chmod +x "$bin_path"
+  rm -rf "$temp_dir"
 }
 
 install "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH" 
