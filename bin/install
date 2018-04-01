@@ -22,7 +22,8 @@ install() {
   [ "x86_64" = "$(uname -m)" ] && arch="amd64" || arch="386"
 
   local download_url
-  download_url="https://github.com/Azure/draft//releases/download/v${version}/draft_${platform}_${arch}"
+  download_url="https://azuredraft.blob.core.windows.net/draft/draft-v${version}-${platform}-${arch}.tar.gz"
+  
 
   mkdir -p "${bin_install_path}"
 
