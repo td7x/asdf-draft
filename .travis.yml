@@ -3,9 +3,7 @@ before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
 script: 
-  - asdf plugin-add draft ./
-  - asdf list-all draft
-  - asdf plugin-test draft ./ 'draft --version'
+  - asdf plugin-test draft https://gitlab.com/td7x/asdf/draft.git
 os:
   - linux
   - osx
