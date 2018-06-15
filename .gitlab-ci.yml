@@ -4,13 +4,13 @@ before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
 
-adfs plugin-test:
+local plugin-test:
   script:
     - asdf plugin-add draft ./
     - asdf list-all draft
-    - asdf plugin-test draft ./ 'draft --version'
+    - asdf plugin-test draft ./
 
 
-adfs plugin-test simple:
+remote plugin-test:
   script:
     - asdf plugin-test draft https://gitlab.com/td7x/asdf/draft.git
