@@ -3,7 +3,7 @@ before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
 script: 
-  - asdf plugin-test draft https://gitlab.com/td7x/asdf/draft.git
+  - asdf plugin-test draft ./
 os:
   - linux
   - osx
